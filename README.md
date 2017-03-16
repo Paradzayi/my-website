@@ -37,6 +37,6 @@ or
 ## Credit
 
 The site makes use of the following open source projects
-[nodejs](https://nodejs.org)
-[bootstrap](https://getbootstrap.com)
-[almsaeed's AdminLte](https://github.com/almasaeed2010/AdminLTE)
+* [nodejs](https://nodejs.org)
+* [bootstrap](https://getbootstrap.com)
+* [almsaeed's AdminLte](https://github.com/almasaeed2010/AdminLTE)
