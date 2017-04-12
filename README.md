@@ -33,3 +33,10 @@ $ heroku open
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Credit
+
+The site makes use of the following open source projects
+* [nodejs](https://nodejs.org)
+* [bootstrap](https://getbootstrap.com)
+* [almsaeed's AdminLte](https://github.com/almasaeed2010/AdminLTE)
