@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Kudakwashe Paradzayi &middot; Portfolio</title>
-    <link rel="stylesheet" href="/vendor/semantic/css/semantic.min.css">
-    <link rel="stylesheet" href="/stylesheets/main.css">
-  </head>
+
+<!-- THE HADER WITH THE STYLING AND THE TITLE -->
+  <%- include('../partials/head') %>
+
   <body>
+    <div class="ui top container basic segment">
+      <div class="ui two column stackable grid">
+
+        <!-- PROFILE PICTURE. INCLUDED IN ALL VIEWS -->
+        <%- include('me') %>
+
+        <!-- CONTAINS THE TABS WITH THE PROJECTS AND TIMELINE-->
+        <div class="column">
+
+          <div class="ui blue secondary pointing menu">
+
+            <% if (page == 'profile') { %>
+              <a href="/" class="active item">Profile</a>
+              <a href="/projects" class="item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="item">Timeline</a>
+            <% } else if (page == 'projects') { %>
+              <a href="/" class="item">Profile</a>
+              <a href="/projects" class="active item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="item">Timeline</a>
+            <% } else if (page == 'timeline') { %>
+              <a href="/" class="item">Profile</a>
+              <a href="/projects" class="item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="active item">Timeline</a>
+              <% } %>
+
+          </div>
+
+          <!-- THE INdEX.EJS RENDERS THE PROFILE -->
+            <%- include(page) -%>
+
+        </div>
+        
+      </div>
+
+      <%- include('../partials/footer') %>
+    </div>
   </body>
-  <script src="/vendor/jquery/jquery.min.js" charset="utf-8"></script>
-  <script src="/vendor/semantic/js/semantic.min.js" charset="utf-8"></script>
+
 </html>
