@@ -1,3 +1,10 @@
+body {
+  background-color: #fffff1;
+}
 .ui.top.container.segment {
   margin-top: 20px;
+}
+.my.column {
+  max-width: 300px;
+  min-width: 250px;
 }
