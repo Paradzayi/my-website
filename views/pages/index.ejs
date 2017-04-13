@@ -1,404 +1,46 @@
+<!DOCTYPE html>
+<html>
 
-<html lang="en">
+<!-- THE HADER WITH THE STYLING AND THE TITLE -->
+  <%- include('../partials/head') %>
 
-<head>
+  <body>
+    <div class="ui top container basic segment">
+      <div class="ui two column stackable grid">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <!-- PROFILE PICTURE. INCLUDED IN ALL VIEWS -->
+        <%- include('me') %>
 
-    <title>Kudakwashe Paradzayi &middot; Portfolio</title>
+        <!-- CONTAINS THE TABS WITH THE PROJECTS AND TIMELINE-->
+        <div class="column">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+          <div class="ui blue secondary pointing menu">
 
-    <!-- Theme CSS -->
-    <link href="css/AdminLTE.min.css" rel="stylesheet">
+            <% if (page == 'profile') { %>
+              <a href="/" class="active item">Profile</a>
+              <a href="/projects" class="item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="item">Timeline</a>
+            <% } else if (page == 'projects') { %>
+              <a href="/" class="item">Profile</a>
+              <a href="/projects" class="active item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="item">Timeline</a>
+            <% } else if (page == 'timeline') { %>
+              <a href="/" class="item">Profile</a>
+              <a href="/projects" class="item">Projects <i class="ui mini circular label">3</i></a>
+              <a href="/timeline" class="active item">Timeline</a>
+              <% } %>
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+          </div>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<style media="screen">
-  body {
-    background: #F0F3F7;
-  }
-</style>
-</head>
-
-<body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" >
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#">Kudakwashe Paradzayi</a>
-            </div>
-
+          <!-- THE INdEX.EJS RENDERS THE PROFILE -->
+            <%- include(page) -%>
 
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!--Body content -->
-    <div class="container-fluid" style="margin-top: 80px;">
-      <div class="row">
-        <!-- About me -->
-        <div class="col-md-3">
-
-              <!-- Profile Image -->
-              <div class="box box-primary">
-                <div class="box-body box-profile">
-                  <img class="profile-user-img img-responsive" src="img/profile.jpg" alt="User profile picture">
-
-                  <h3 class="profile-username text-center">Kudakwashe Paradzayi</h3>
-
-                  <p class="text-muted text-center">Software Developer</p>
-
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
-
-              <!-- About Me Box -->
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">About Me</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-
-                  <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-                  <p>
-                    <span class="label label-info">Javascript</span>
-                    <span class="label label-warning">Vue.js</span>
-                    <span class="label label-primary">Node.js</span>
-                    <span class="label label-danger">CSS</span>
-                    <span class="label label-info">HTMl</span>
-                    <span class="label label-success">git</span>
-                  </p>
-
-                  <hr>
-
-                  <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
-
-                  <p class="text-muted">
-                    <ul class="list-group">
-                      <li class="list-group-item">O Level <span class="pull-right">11 As</span></li>
-                      <li class="list-group-item">A Level <span class="pull-right">13 points</span></li>
-                    </ul>
-                  </p>
-
-                  <hr>
-
-                  <strong>Profile</strong>
-
-                  <ul class="list-group">
-                    <li class="list-group-item"><i class="fa fa-phone"></i> <span class="pull-right">  +263 785 274 369</span></li>
-                    <li class="list-group-item"><i class="fa fa-envelope"></i><span class="pull-right"><a href="mailto:kgparadzayi@gmail.com">  kgparadzayi@gmail.com</a></span></li>
-                    <li class="list-group-item"><i class="fa fa-github"></i><span class="pull-right"><a href="https://github.com/paradzayi">  github.com/paradzayi</a></span></li>
-                  </ul>
-
-                  <hr>
-
-                  <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-                  <p class="text-muted">Harare, Zimbabwe</p>
-
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
-            </div>
-            <!-- /.col -->
-        <!-- Other things -->
-        <div class="col-md-9">
-
-          <div class="nav-tabs-custom">
-
-            <!-- Nav tabs (the visible headers) -->
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#timeline" data-toggle="tab"><i class="fa fa-clock-o"></i>Timeline</a></li>
-              <li><a href="#projects" data-toggle="tab"><i class="fa fa-code"></i>Projects</a></li>
-            </ul> <!-- Nav Taba-->
-
-            <div class="tab-content">
-
-              <!-- /.tab-pane -->
-              <div class=" active tab-pane" id="timeline">
-                <!-- The timeline -->
-                <ul class="timeline timeline-inverse">
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-purple">
-                          21 February. 2017
-                        </span>
-                  </li><!-- /.timeline-label -->
-
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-graduation-cap"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 15:30</span>
-
-                      <h3 class="timeline-header">Recieved my A level results</a></h3>
-
-                      <div class="timeline-body">
-                        <p>Cold sweat ran down my spine when I heard that the Advanced level results were out. I wasn't so sure if I had perfomed well. But glory be to God, I had passed.</p>
-                        <p>The results came out as follows:
-                          <ul class="list-group">
-                            <li class="list-group-item">Computing <span class="label label-success pull-right">A</span></li>
-                            <li class="list-group-item">Physics <span class="label label-primary pull-right">B</span></li>
-                            <li class="list-group-item">Mathematics <span class="label label-default"><span class="fa fa-clock-o">Written in June</span></span> <span class="label label-primary pull-right">B</span></li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-green">
-                          27 November. 2016
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-globe"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 08:00</span>
-
-                      <h3 class="timeline-header">Joined <a href="http://giskonsult.com">giskonsult plc</a></h3>
-
-                      <div class="timeline-body">
-                        <p>I joined GISkonsult as a junior web developer. At that time I had very little knowledge of HTML/CSS and I was hesitant at first.</p>
-                         <p>I had been recruited on the basis that I had developed a functional application that was implemented by Anderson Adventist High School. So I finally agreed and I had a great experience there. I learnt some skills that I didn't have before and most importantly I learnt how to learn.</p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-green">
-                          2 October. 2016
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-globe"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 12:22</span>
-
-                    <h3 class="timeline-header">Got awarded for an innovative software design</h3>
-
-                      <div class="timeline-body">
-                        <p>During the annual speech and prize giving day I was given a special award. That award recognized the software I had developed for Anderson Adventist High School library.</p>
-                        <p>The full description of the software can be found <a href="#projects" data-toggle="tab">here</a>. This software was showcased at the Science and Technology Exhibition held at Chaplin High School.</p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-green">
-                          14 January. 2016
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-globe"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 12:22</span>
-
-                    <h3 class="timeline-header">Launched Anderson Computer Management System</h3>
-
-                      <div class="timeline-body">
-                        <p>A new age dawned at Anderson Adventist High School when the software I developed to secure the computers was officially installed in the library.</p>
-                        <p>I developed the system in response to the crisis that arose because of the low number of computers. Some students were spending more time on the computers and not giving other students a chance to also use the computers.</p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li>
-                    <i class="fa fa-clock-o bg-gray"></i>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.tab-pane -->
-
-              <!-- Projets tab -->
-              <div class="tab-pane" id="projects">
-                <!-- Box -->
-                <div class="box">
-                  <!-- box header -->
-                  <div class="box-header">
-                    <h3 class="box-title">Projects</h3>
-                  </div> <!-- ./box-header-->
-
-                  <!-- box footer -->
-                  <div class="box-footer">
-                    <nav>
-                      <ul class="pager">
-                        <li class="previous">
-                          <!-- Left and right controls -->
-                          <a href="#myCarousel" role="button" data-slide="prev">
-                            &larr; Previous
-                          </a>
-                        </li>
-                      <li class="next">
-                          <a href="#myCarousel" role="button" data-slide="next">
-                            &rarr; Next
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div> <!-- ./box footer -->
-
-                  <!-- box body -->
-                  <div class="box-body">
-
-                    <!-- Carousel -->
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-                      <style media="screen">
-                        .item {min-height: 100px;}
-                      </style>
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                          <div class="row">
-                              <div class="col-lg-8 col-lg-offset-2">
-                                  <div class="modal-body">
-                                      <span class="fa fa-lock fa-2x"> | Anderson Computer Management system</span>
-                                      <hr class="star-primary">
-                                      <p>ACMS does an incredible job of allocating time to the students as they use the library computers. This is because the computer to pupil ratio is high so the students have to share the computers and give each other a chance to also use them.</p>
-                                      <p>I worked on this project in 2016 while I was still in high school as an extra carricuar activity. I never thought it was going to be big, but today I can proudly say about 60 computers at Anderson Adventist High School run the software I developed.</p>
-                                      <ul class="list-inline item-details">
-                                          <li>Client:
-                                              <strong><a href="http://www.andersonadventist.ac.zw/">Anderson Adventist High School</a>
-                                                <p> Or you can watch my presentation of the project on youtube <a href="https://www.youtube.com/watch?v=rz0uEXUPHvc&feature=youtu.be">https://www.youtube.com/watch?v=rz0uEXUPHvc&feature=youtu.be</a></p>
-                                              </strong>
-                                          </li>
-                                          <li>Date:
-                                              <strong>2016</a>
-                                              </strong>
-                                          </li>
-                                          <li>Service:
-                                              <strong> <span class="label label-success">Desktop Development</span> | <span class="label label-warning">Security</span></a>
-                                              </strong>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                        <div class="item">
-                          <div class="row">
-                              <div class="col-lg-8 col-lg-offset-2">
-                                  <div class="modal-body">
-                                      <span class="fa fa-globe fa-2x"> | GISkonsult</span>
-                                      <hr class="star-primary">
-                                      <p>I am currently working at GISkonsult on a project thet I can not fully diclose due to an NDA that i signed.</p>
-                                      <ul class="list-inline item-details">
-                                          <li>Client:
-                                              <strong><a href="http://giskonsult.com">GISkonsult & Gweru City Council</a>
-                                              </strong>
-                                          </li>
-                                          <li>Date:
-                                              <strong>2017</a>
-                                              </strong>
-                                          </li>
-                                          <li>Service:
-                                              <strong><span class="label label-info">Web Development </span>| <span class="label label-success">Geographic information systems</span></a>
-                                              </strong>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-
-                        </div>
-
-                        <div class="item">
-                          <div class="row">
-                              <div class="col-lg-8 col-lg-offset-2">
-                                  <div class="modal-body">
-                                      <span class="fa fa-hand-o-right fa-2x">My Next Project</span>
-                                      <hr class="star-primary">
-                                      <p>Your project could be here. Hire me for any web development, desktop app development or computer consultancy services.</p>
-                                      <ul class="list-inline item-details">
-                                          <li>Client:
-                                              <strong><a href="#">You</a>
-                                              </strong>
-                                          </li>
-                                          <li>Date:
-                                              <strong>Anytime from today</a>
-                                              </strong>
-                                          </li>
-                                          <li>Service:
-                                              <strong><span class="label label-primary">Web Development</span> | <span class="label label-default">Desktop</span> | <span class="label label-warning">Consultancy</span> </a>
-                                              </strong>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-
-                        </div>
-
-                      </div>
-
-
-                    </div>
-
-                  </div> <!-- ./ box body -->
-
-
-                </div>
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div> <!-- / other things -->
-      </div> <!-- /.row -->
-    </div> <!-- /.container-fluid-->
-
-    <footer class="container-fluid">
-      <hr style="margin-top:20px">
-      <div class="well well-sm">
-        <p  class="text-left"><span class="fa fa-github"><a href="https://github.com/paradzayi/my-website">View site on github</a></span></p>
+        
       </div>
-    </footer>
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-</body>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
 
 </html>
