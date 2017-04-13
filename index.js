@@ -10,11 +10,17 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.render('pages/index', {page: 'profile'});
+});
+
+app.get('/projects', function(request, response) {
+  response.render('pages/index', {page: 'projects'});
+});
+
+app.get('/timeline', function(request, response) {
+  response.render('pages/index', {page: 'timeline'});
 });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
